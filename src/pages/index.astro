@@ -26,6 +26,8 @@ const url = "https://remembergaza.id";
 const title = "Remember Gaza";
 const description = `From ${totalVictims} killed in Gaza since October 7, 2023, ${totalIdentifiedVictims} victims are identified. Here are their names.`;
 const image = "/android-chrome-512x512.png";
+
+const lastRetrieved = new Date();
 ---
 
 <html lang="en">
@@ -90,11 +92,10 @@ const image = "/android-chrome-512x512.png";
         ))
       }
       <br /><br />
-      <p>
-        Source: <a href="https://data.techforpalestine.org/"
-          >Palestine Datasets</a
-        >
-      </p>
+      Source: <a href="https://data.techforpalestine.org/">Palestine Datasets</a
+      >
+      <br />
+      Last retrieved: {lastRetrieved.toUTCString()}
       <br /><br /><br /><br />
     </center>
 
