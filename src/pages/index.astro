@@ -1,0 +1,79 @@
+---
+interface Victim {
+  name: string;
+  en_name: string;
+}
+
+const killedInGaza = await fetch(
+  "https://data.techforpalestine.org/api/v2/killed-in-gaza.min.json"
+);
+
+const identifiedVictims: [Victim] = await killedInGaza.json();
+const totalIdentifiedVictims: number = identifiedVictims.length;
+
+const summary = await fetch(
+  "https://data.techforpalestine.org/api/v3/summary.min.json"
+);
+const summaryData = await summary.json();
+const totalVictims = summaryData.gaza.killed.total;
+const unidentifiedVictims = totalVictims - totalIdentifiedVictims;
+
+const formatNumber = (number: number): string => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>Remember Gaza</title>
+  </head>
+  <body>
+    <center>
+      <h1>Remember Gaza</h1>
+      <>
+        {
+          `There are ${formatNumber(totalIdentifiedVictims)} identified victims killed in Gaza since October 7, 2023.`
+        }
+      </>
+      <br />
+      <>
+        {
+          `While the remaining ${formatNumber(unidentifiedVictims)} victims are still unidentified.`
+        }
+      </>
+      <br /><br />
+      <>
+        {`Total souls killed in Gaza: ${formatNumber(totalVictims)}.`}
+      </>
+      <br /><br /><br /><br />
+      {
+        identifiedVictims.map((hero: Victim, index: number) => (
+          <>
+            {formatNumber(index + 1)}
+            <br />
+            {`${hero.name}`}
+            <br />
+            {`(${hero.en_name})`}
+            <br />
+            <br />
+          </>
+        ))
+      }
+      <br /><br />
+      <p>
+        Source: <a href="https://data.techforpalestine.org/"
+          >Palestine Datasets</a
+        >
+      </p>
+      <br /><br /><br /><br />
+    </center>
+  </body>
+</html>
