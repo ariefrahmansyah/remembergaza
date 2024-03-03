@@ -1,19 +1,13 @@
 ---
-interface Victim {
-  name: string;
-  en_name: string;
-}
-
-const formatNumber = (number: number): string => {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
+import VictimsList from "../components/VictimsList";
+import formatNumber from "../utils/format";
 
 const killedInGaza = await fetch(
   "https://data.techforpalestine.org/api/v2/killed-in-gaza.min.json"
 );
 
-const identifiedVictims: [Victim] = await killedInGaza.json();
-const totalIdentifiedVictims: number = identifiedVictims.length;
+const identifiedVictims = await killedInGaza.json();
+const totalIdentifiedVictims = identifiedVictims.length;
 
 const summary = await fetch(
   "https://data.techforpalestine.org/api/v3/summary.min.json"
@@ -93,19 +87,9 @@ const lastRetrieved = new Date();
         {`Total souls killed in Gaza: ${formatNumber(totalVictims)}.`}
       </>
       <br /><br /><br /><br />
-      {
-        identifiedVictims.map((hero: Victim, index: number) => (
-          <>
-            {formatNumber(index + 1)}
-            <br />
-            {`${hero.name}`}
-            <br />
-            {`(${hero.en_name})`}
-            <br />
-            <br />
-          </>
-        ))
-      }
+
+      <VictimsList client:load victims={identifiedVictims} />
+
       <br /><br />
       Source: <a href="https://data.techforpalestine.org/">Palestine Datasets</a
       >
