@@ -1,5 +1,4 @@
 ---
-import VictimsList from "../components/VictimsList";
 import formatNumber from "../utils/format";
 
 const killedInGaza = await fetch(
@@ -88,7 +87,19 @@ const lastRetrieved = new Date();
       </>
       <br /><br /><br /><br />
 
-      <VictimsList client:load victims={identifiedVictims} />
+      {
+        identifiedVictims.map((victim, index) => (
+          <>
+            {formatNumber(index + 1)}
+            <br />
+            {`${victim.name}`}
+            <br />
+            {`(${victim.en_name})`}
+            <br />
+            <br />
+          </>
+        ))
+      }
 
       <br /><br />
       Source: <a href="https://data.techforpalestine.org/">Palestine Datasets</a
