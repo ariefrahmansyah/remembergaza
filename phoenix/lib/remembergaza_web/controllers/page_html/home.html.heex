@@ -1,0 +1,26 @@
+<center>
+  <br />
+  <br />
+
+  <h1>Remember Gaza</h1>
+
+  There are <strong><%= @total_identified_victims %></strong> identified victims killed in Gaza since October 7, 2023.
+  <br />
+  While the remaining <strong><%= @unidentified_victims %></strong> victims are still unidentified.
+  <br />
+  <br />
+  Total souls killed in Gaza: <strong><%= @total_victims %></strong>.
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <div id="victims" role="log" aria-live="polite"></div>
+  <br />
+  <br />
+
+  Source: <a href="https://data.techforpalestine.org/">Palestine Datasets</a>
+  <br />
+  Last retrieved: <%= @last_retrieved %>
+  <br /><br /><br /><br />
+</center>

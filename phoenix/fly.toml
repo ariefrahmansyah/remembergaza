@@ -1,0 +1,30 @@
+# fly.toml app configuration file generated for remembergaza on 2024-03-03T18:54:48Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'remembergaza'
+primary_region = 'sin'
+kill_signal = 'SIGTERM'
+
+[build]
+
+[env]
+  PHX_HOST = 'www.remembergaza.id'
+  PORT = '8080'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+  [http_service.concurrency]
+    type = 'connections'
+    hard_limit = 1000
+    soft_limit = 1000
+
+[[vm]]
+  size = 'shared-cpu-1x'

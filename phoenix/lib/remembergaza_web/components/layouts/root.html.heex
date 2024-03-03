@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Primary Meta Tags -->
+    <title>Remember Gaza</title>
+    <meta name="title" content="Remember Gaza" />
+    <meta name="description" {@description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://remembergaza.id" />
+    <meta property="og:title" content="Remember Gaza" />
+    <meta property="og:description" {@description} />
+    <meta property="og:image" content="/android-chrome-512x512.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://remembergaza.id" />
+    <meta property="twitter:title" content="Remember Gaza" />
+    <meta property="twitter:description" {@description} />
+    <meta property="twitter:image" content="/android-chrome-512x512.png" />
+
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BYS0FYMTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8BYS0FYMTY');
+    </script>
+  </head>
+  <body class="bg-white antialiased">
+    <%= @inner_content %>
+  </body>
+</html>
