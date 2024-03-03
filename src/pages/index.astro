@@ -58,6 +58,21 @@ const lastRetrieved = new Date();
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8BYS0FYMTY"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8BYS0FYMTY");
+    </script>
   </head>
   <body>
     <center>
@@ -98,20 +113,5 @@ const lastRetrieved = new Date();
       Last retrieved: {lastRetrieved.toUTCString()}
       <br /><br /><br /><br />
     </center>
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      is:inline
-      src="https://www.googletagmanager.com/gtag/js?id=G-8BYS0FYMTY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-8BYS0FYMTY");
-    </script>
   </body>
 </html>
