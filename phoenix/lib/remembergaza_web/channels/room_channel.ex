@@ -1,8 +1,6 @@
 defmodule RemembergazaWeb.RoomChannel do
   use RemembergazaWeb, :channel
 
-  require Logger
-
   @impl true
   def join("room:lobby", _payload, socket) do
     send(self(), :after_join)
@@ -13,9 +11,14 @@ defmodule RemembergazaWeb.RoomChannel do
   def handle_info(:after_join, socket) do
     identified_victims = Application.get_env(:remembergaza, :identified_victims)
 
-    Enum.map(identified_victims, fn value ->
+    Enum.chunk_every(identified_victims, 1000)
+    |> Enum.each(fn chunk ->
       push(socket, "message", %{
-        message: "#{value["name"]}<br />#{value["en_name"]}<br />"
+        victims:
+          Enum.map(chunk, fn value ->
+            "#{value["name"]}<br />#{value["en_name"]}"
+          end)
+          |> Enum.join("<br /><br /><br />")
       })
 
       :timer.sleep(1)

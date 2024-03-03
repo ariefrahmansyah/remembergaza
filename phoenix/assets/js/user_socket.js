@@ -61,10 +61,9 @@ channel.join()
 let messagesContainer = document.querySelector("#victims")
 
 channel.on("message", payload => {
-  let messageItem = document.createElement("p")
-  messageItem.innerHTML = `${payload.message}`
+  let messageItem = document.createElement("div")
+  messageItem.innerHTML = `${payload.victims}`
   messagesContainer.appendChild(messageItem)
-  messagesContainer.appendChild(document.createElement("br"))
 })
 
 export default socket
