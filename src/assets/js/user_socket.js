@@ -67,7 +67,7 @@ let messagesContainer = document.querySelector("#victims");
 
 channel.on("message", (payload) => {
   let messageItem = document.createElement("div");
-  messageItem.className = "flex flex-col gap-y-6";
+  messageItem.className = "flex flex-col gap-y-6 h-fit";
 
   messageItem.innerHTML = `${payload.victims}`;
   messagesContainer.appendChild(messageItem);
