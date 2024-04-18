@@ -16,9 +16,9 @@ defmodule RemembergazaWeb.RoomChannel do
       push(socket, "message", %{
         victims:
           Enum.map(chunk, fn value ->
-            "#{value["name"]}<br />#{value["en_name"]}"
+            "<div><h3>#{value["name"]}</h3><p>#{value["en_name"]}</p></div>"
           end)
-          |> Enum.join("<br /><br /><br />")
+          |> Enum.join()
       })
 
       :timer.sleep(1)
