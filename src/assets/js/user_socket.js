@@ -2,11 +2,11 @@
 // you uncomment its entry in "assets/js/app.js".
 
 // Bring in Phoenix channels client library:
-import { Socket } from "phoenix"
+import { Socket } from "phoenix";
 
 // And connect to the path in "lib/remembergaza_web/endpoint.ex". We pass the
 // token for authentication. Read below how it should be used.
-let socket = new Socket("/socket", { params: { token: window.userToken } })
+let socket = new Socket("/socket", { params: { token: window.userToken } });
 
 // When you connect, you'll often need to authenticate the client.
 // For example, imagine you have an authentication plug, `MyAuth`,
@@ -51,19 +51,26 @@ let socket = new Socket("/socket", { params: { token: window.userToken } })
 //     end
 //
 // Finally, connect to the socket:
-socket.connect()
+socket.connect();
 
-let channel = socket.channel("room:lobby", {})
-channel.join()
-  .receive("ok", resp => { console.log("Connected successfully", resp) })
-  .receive("error", resp => { console.log("Unable to connect", resp) })
+let channel = socket.channel("room:lobby", {});
+channel
+  .join()
+  .receive("ok", (resp) => {
+    console.log("Connected successfully", resp);
+  })
+  .receive("error", (resp) => {
+    console.log("Unable to connect", resp);
+  });
 
-let messagesContainer = document.querySelector("#victims")
+let messagesContainer = document.querySelector("#victims");
 
-channel.on("message", payload => {
-  let messageItem = document.createElement("div")
-  messageItem.innerHTML = `${payload.victims}`
-  messagesContainer.appendChild(messageItem)
-})
+channel.on("message", (payload) => {
+  let messageItem = document.createElement("div");
+  messageItem.className = "flex flex-col gap-y-6 h-fit";
 
-export default socket
+  messageItem.innerHTML = `${payload.victims}`;
+  messagesContainer.appendChild(messageItem);
+});
+
+export default socket;
