@@ -1,25 +1,22 @@
-<center>
-  <br />
-  <br />
+<center class="flex flex-col py-6 px-6 md:py-12 md:px-12">
+  <h1 class="mb-8">Remember Gaza</h1>
 
-  <h1>Remember Gaza</h1>
+  <p class="mb-8">
+    There are <strong><%= @total_identified_victims %></strong> identified
+    victims killed in Gaza since October 7, 2023.
+    <br />
+    While the remaining <strong><%= @unidentified_victims %></strong> victims
+    are still unidentified.
+  </p>
 
-  There are <strong><%= @total_identified_victims %></strong> identified victims killed in Gaza since October 7, 2023.
-  <br />
-  While the remaining <strong><%= @unidentified_victims %></strong> victims are still unidentified.
-  <br />
-  <br />
-  Total souls killed in Gaza: <strong><%= @total_victims %></strong>.
-  <br />
-  <br />
-  <br />
+  <p class="mb-8">
+    Total souls killed in Gaza: <strong><%= @total_victims %></strong>.
+  </p>
 
-  <div id="victims" role="log" aria-live="polite"></div>
-  <br />
-  <br />
+  <div id="victims" role="log" aria-live="polite" class="gap-y-6 flex flex-col"></div>
 
-  Source: <a href="https://data.techforpalestine.org/">Palestine Datasets</a>
-  <br />
-  Last retrieved: <%= @last_retrieved %>
-  <br /><br /><br /><br />
+  <h3>
+    Source: <a href="https://data.techforpalestine.org/">Palestine Datasets</a>
+  </h3>
+  <p>Last retrieved: <%= @last_retrieved %></p>
 </center>
