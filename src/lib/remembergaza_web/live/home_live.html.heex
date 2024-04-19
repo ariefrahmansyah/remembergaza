@@ -24,6 +24,9 @@
     <div :for={{_, victim} <- @streams.victims}>
       <h3><%= victim["name"] %></h3>
       <p><%= victim["en_name"] %></p>
+      <%= if victim["age"] != nil and victim["age"] != -1 do %>
+        <p class="text-sm text-slate-500"><%= victim["age"] %> years old</p>
+      <% end %>
     </div>
   </div>
 
