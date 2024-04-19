@@ -1,0 +1,34 @@
+<center class="flex flex-col py-6 px-6 md:py-12 md:px-12">
+  <h1 class="mb-8">Remember Gaza</h1>
+
+  <p class="mb-8">
+    There are <strong><%= @total_identified_victims %></strong> identified
+    victims killed in Gaza since October 7, 2023.
+    <br />
+    While the remaining <strong><%= @unidentified_victims %></strong> victims
+    are still unidentified.
+  </p>
+
+  <p class="mb-8">
+    Total souls killed in Gaza: <strong><%= @total_victims %></strong>.
+  </p>
+
+  <div
+    id="victims"
+    phx-update="stream"
+    phx-viewport-top={@page > 1 && "prev-page"}
+    phx-viewport-bottom="next-page"
+    phx-page-loading
+    class="grid gap-6 md:grid-cols-3 mb-8"
+  >
+    <div :for={{_, victim} <- @streams.victims}>
+      <h3><%= victim["name"] %></h3>
+      <p><%= victim["en_name"] %></p>
+    </div>
+  </div>
+
+  <h3>
+    Source: <a href="https://data.techforpalestine.org/">Palestine Datasets</a>
+  </h3>
+  <p>Last retrieved: <%= @last_retrieved %></p>
+</center>

@@ -13,7 +13,7 @@ defmodule RemembergazaWeb.Router do
   scope "/", RemembergazaWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", HomeLive
 
     import Phoenix.LiveDashboard.Router
     live_dashboard "/dashboard", metrics: RemembergazaWeb.Telemetry
