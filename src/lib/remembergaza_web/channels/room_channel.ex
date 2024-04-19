@@ -13,13 +13,7 @@ defmodule RemembergazaWeb.RoomChannel do
 
     Enum.chunk_every(identified_victims, 1000)
     |> Enum.each(fn chunk ->
-      push(socket, "message", %{
-        victims:
-          Enum.map(chunk, fn value ->
-            "<div><h3>#{value["name"]}</h3><p>#{value["en_name"]}</p></div>"
-          end)
-          |> Enum.join()
-      })
+      push(socket, "message", %{ victims: chunk })
 
       :timer.sleep(1)
     end)

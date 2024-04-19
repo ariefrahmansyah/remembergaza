@@ -66,7 +66,42 @@ channel
 let messagesContainer = document.querySelector("#victims");
 
 channel.on("message", (payload) => {
-  messagesContainer.innerHTML += payload.victims
+  // Example data of `payload.victims[0]` passed from socket.
+  // {
+  //   age: 43,
+  //   dob: "1981-01-06",
+  //   en_name: "Ahmed Abdalrahamun Ahmed Shehab",
+  //   id: "994024404",
+  //   name: "أحمد عبدالرحمن أحمد شهاب",
+  //   sex: "m",
+  // };
+
+  // Construct innerHTML using the data.
+  const innerHTML = payload.victims
+    .map((victim) => {
+      return generateVictimInfoHtml(victim);
+    })
+    .join("");
+
+  // Append the columnDiv to the messagesContainer.
+  messagesContainer.innerHTML += innerHTML;
 });
 
 export default socket;
+
+/**
+ * HTML string to display a single victim information.
+ */
+function generateVictimInfoHtml({ age, dob, en_name, name, sex }) {
+  return `
+  <div>
+    <h3>${name}</h3>
+    <p>${en_name}</p>
+    ${
+      age == null || age === -1
+        ? `<p class="text-sm text-slate-500">unknown age</p>`
+        : `<p class="text-sm text-slate-500">${age} years old</p>`
+    }
+  </div>
+  `;
+}
