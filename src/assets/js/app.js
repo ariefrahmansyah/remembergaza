@@ -16,9 +16,9 @@
 //
 
 // Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
-import "phoenix_html"
-// Establish Phoenix Socket and LiveView configuration.
+import Fireflies from 'fireflies.js'
 import { Socket } from "phoenix"
+import "phoenix_html"
 import { LiveSocket } from "phoenix_live_view"
 import topbar from "../vendor/topbar"
 
@@ -29,9 +29,11 @@ let liveSocket = new LiveSocket("/live", Socket, {
 })
 
 // Show progress bar on live navigation and form submits
-topbar.config({ barColors: { 0: "#29d" }, shadowColor: "rgba(0, 0, 0, .3)" })
+topbar.config({ barColors: { 0: "#fff" }, shadowColor: "rgba(0, 0, 0, .3)" })
 window.addEventListener("phx:page-loading-start", _info => topbar.show(300))
 window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
+
+Fireflies.initialize(50, [1, 3], [{ fill: '#ffffff', glow: '#ffffff' }], true, true, true, false)
 
 // connect if there are any LiveViews on the page
 liveSocket.connect()
