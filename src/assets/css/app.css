@@ -17,3 +17,8 @@
     @apply text-base;
   }
 }
+
+canvas {
+  @apply fixed;
+  @apply inset-0;
+}
