@@ -7,7 +7,7 @@ jobs:
   restart-machines:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl app restart remembergaza
         working-directory: ./src
