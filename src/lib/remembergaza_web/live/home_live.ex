@@ -24,7 +24,7 @@ defmodule RemembergazaWeb.HomeLive do
        last_retrieved: last_retrieved,
        description: %{content: description_content},
        page: 1,
-       per_page: 999
+       per_page: 333
      )
      |> stream_configure(:victims, dom_id: &"victims-#{&1["id"]}")
      |> paginate_victims(1)}
