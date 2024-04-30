@@ -33,7 +33,7 @@ topbar.config({ barColors: { 0: "#fff" }, shadowColor: "rgba(0, 0, 0, .3)" })
 window.addEventListener("phx:page-loading-start", _info => topbar.show(300))
 window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
 
-Fireflies.initialize(50, [1, 3], [{ fill: '#ffffff', glow: '#ffffff' }], true, true, true, false)
+Fireflies.initialize(undefined, [1, 3], [{ fill: '#ffffff', glow: '#ffffff' }], true, true, true, false)
 
 // connect if there are any LiveViews on the page
 liveSocket.connect()

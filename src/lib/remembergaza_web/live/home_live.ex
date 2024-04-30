@@ -2,6 +2,8 @@ defmodule RemembergazaWeb.HomeLive do
   use RemembergazaWeb, :live_view
   import RemembergazaWeb.Format, only: [format_number: 1]
 
+  embed_templates "components/*"
+
   def mount(_params, _session, socket) do
     identified_victims = Application.get_env(:remembergaza, :identified_victims)
     total_identified_victims = length(identified_victims)
