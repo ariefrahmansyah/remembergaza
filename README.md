@@ -1,5 +1,5 @@
 [![Ceasefire Now](https://badge.techforpalestine.org/default)](https://techforpalestine.org/learn-more)
-[![All Contributors](https://img.shields.io/github/all-contributors/ariefrahmansyah/remembergaza?color=ee8449&style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/github/all-contributors/akhil0203/remembergaza?color=ee8449&style=flat-square)](#contributors)
 
 This repository contains source code for https://www.remembergaza.id website. It fetches the datasets from the [Palestine Datasets](https://data.techforpalestine.org/).
 
