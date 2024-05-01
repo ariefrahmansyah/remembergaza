@@ -1,6 +1,5 @@
 [![Ceasefire Now](https://badge.techforpalestine.org/default)](https://techforpalestine.org/learn-more)
 
-# Remember Gaza
 
 This repository contains source code for https://www.remembergaza.id website. It fetches the datasets from the [Palestine Datasets](https://data.techforpalestine.org/).
 
@@ -26,6 +25,16 @@ Run the webserver:
 ```bash
 mix phx.server
 ```
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Contributing
 
