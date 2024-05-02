@@ -26,6 +26,23 @@ Run the webserver:
 ```bash
 mix phx.server
 ```
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/akhil0203"><img src="https://avatars.githubusercontent.com/u/101108396?v=4?s=100" width="100px;" alt="akhil"/><br /><sub><b>akhil</b></sub></a><br /><a href="#code-akhil0203" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Contributing
 
