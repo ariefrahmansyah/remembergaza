@@ -1,21 +1,62 @@
 {
   "projectName": "remembergaza",
   "projectOwner": "ariefrahmansyah",
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "commitType": "docs",
   "commitConvention": "angular",
   "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": true,
   "contributors": [
     {
       "login": "akhil0203",
       "name": "akhil",
       "avatar_url": "https://avatars.githubusercontent.com/u/101108396?v=4",
       "profile": "https://github.com/akhil0203",
-      "contributions": [
-        "code"
-      ]
+      "contributions": ["code"]
+    },
+    {
+      "login": "ariefrahmansyah",
+      "name": "Arief Rahmansyah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8122852?v=4",
+      "profile": "https://ariefrahmansyah.com/",
+      "contributions": ["code", "doc"]
+    },
+    {
+      "login": "msafdev",
+      "name": "Moon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/116475964?v=4",
+      "profile": "https://github.com/msafdev",
+      "contributions": ["code"]
+    },
+    {
+      "login": "iamyuu",
+      "name": "Muhammad Yusuf",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45778229?v=4",
+      "profile": "https://github.com/iamyuu",
+      "contributions": ["code"]
+    },
+    {
+      "login": "randyvarianda",
+      "name": "randyvarianda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39326326?v=4",
+      "profile": "https://github.com/randyvarianda",
+      "contributions": ["design"]
+    },
+    {
+      "login": "nandafebr",
+      "name": "Nanda Febrian Adhinugroho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13997774?v=4",
+      "profile": "https://github.com/nandafebr",
+      "contributions": ["design"]
+    },
+    {
+      "login": "AsadSaleh",
+      "name": "As'ad Saleh Umar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31646255?v=4",
+      "profile": "https://asadghanim.vercel.app/",
+      "contributions": ["code"]
     }
-  ]
+  ],
+  "repoType": "github"
 }
+
