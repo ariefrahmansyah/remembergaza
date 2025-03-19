@@ -5,6 +5,35 @@
 
 This repository contains source code for https://www.remembergaza.id website. It gets the datasets from the [Palestine Datasets](https://data.techforpalestine.org/).
 
+## Getting Started
+
+This project is built using [Next.js](https://nextjs.org/), a React framework. To get started, you need to have Node.js installed on your machine.
+
+### Prerequisites
+
+- Node.js
+- PNPM
+
+### Running the project
+
+1. Clone the repository
+
+```bash
+git clone git@github.com:ariefrahmansyah/remembergaza.git
+```
+
+2. Install the dependencies
+
+```bash
+pnpm install
+```
+
+3. Run the development server
+
+```bash
+pnpm dev
+```
+
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
