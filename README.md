@@ -3,30 +3,37 @@
 
 # Remember Gaza
 
-This repository contains source code for https://www.remembergaza.id website. It fetches the datasets from the [Palestine Datasets](https://data.techforpalestine.org/).
+This repository contains source code for https://www.remembergaza.id website. It gets the datasets from the [Palestine Datasets](https://data.techforpalestine.org/).
 
 ## Getting Started
 
-As prerequisites, you need to install Elixir first. You can follow this guide: https://elixir-lang.org/install.html
+This project is built using [Next.js](https://nextjs.org/), a React framework. To get started, you need to have Node.js installed on your machine.
 
-Next, clone the repository:
+### Prerequisites
+
+- Node.js
+- PNPM
+
+### Running the project
+
+1. Clone the repository
 
 ```bash
 git clone git@github.com:ariefrahmansyah/remembergaza.git
 ```
 
-Install and setup dependencies:
+2. Install the dependencies
 
 ```bash
-cd remembergaza/src
-mix setup
+pnpm install
 ```
 
-Run the webserver:
+3. Run the development server
 
 ```bash
-mix phx.server
+pnpm dev
 ```
+
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
